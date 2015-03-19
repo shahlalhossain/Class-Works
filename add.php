@@ -1,24 +1,26 @@
-
-<html>
+<html lang="en">
+<head>
+    <title>Add 2 Numbers</title>
+</head>
 <body>
-<form action="<?php $_PHP_SELF ?>" method="POST">
-
-    Input First Number: <input type="text" name="number1" /> <br>
-    Input Second Number: <input type="text" name="number2" />
-    <input type="submit" value="Add" />
-</form>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        First Number: <input type="text" name="number1" /> <br>
+        Second Number: <input type="text" name="number2" />
+        <input type="submit" value="Add" />
+    </form>
 </body>
 </html>
 
-
-
 <?php
 
-$number1 = $_POST['number1']. "<br />";
-$number2 = $_POST['number2']. "<br />";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-$sum = $number1 + $number2;
+    $number1 = $_POST['number1']. "<br />";
+    $number2 = $_POST['number2']. "<br />";
 
-echo "Sum of the Two Given number is ="."$sum";
-
+    if ($number1 && $number2) {
+        $sum = (int) $number1 + (int) $number2;
+        echo "Sum of the Two Given number is: "."$sum";
+    }
+}
 ?>
