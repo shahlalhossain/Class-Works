@@ -1,59 +1,42 @@
-
 <html>
+<head>
+    <title>Calculate Grade</title>
+</head>
 <body>
-<form action="<?php $_PHP_SELF ?>" method="POST">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 
-    Input Number: <input type="text" name="number" /> <br>
+        Input Number: <input type="text" name="number" />
         <input type="submit" value="Generate Grade" />
-</form>
+
+    </form>
 </body>
 </html>
 
-
-
-
 <?php
 
-$number1 = $_POST['number'] . "<br />";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-if($number1 >= 80 && $number1 <= 100)
-{
-    echo "A+";
-}
+    $number = $_POST['number'];
 
-elseif($number1 >= 70 && $number1 <= 79)
-{
-    echo "A";
-}
-
-elseif($number1 >= 60 && $number1 <= 69)
-{
-    echo "A-";
-}
-
-elseif($number1 >= 50 && $number1 <= 59)
-{
-    echo "B";
-}
-
-elseif($number1 >= 40 && $number1 <= 49)
-{
-    echo "C";
-}
-
-elseif($number1 >= 33 && $number1 <= 39)
-{
-    echo "D";
-}
-
-elseif($number1 >= 0 && $number1 <= 32)
-{
-    echo "Fail";
-}
-
-else
-{
-    echo "Invalid Number";
+    if ($number) {
+        if($number >= 80 && $number <= 100) {
+            echo "Obtain Number:". (int)$number ." and Grade is: A+";
+        } elseif($number >= 70 && $number <= 79) {
+            echo "Obtain Number:". (int)$number ." and Grade is: A";
+        } elseif($number >= 60 && $number <= 69) {
+            echo "Obtain Number:". (int)$number ." and Grade is: A-";
+        } elseif($number >= 50 && $number <= 59) {
+            echo "Obtain Number:". (int)$number ." and Grade is: B";
+        } elseif($number >= 40 && $number <= 49) {
+            echo "Obtain Number:". (int)$number ." and Grade is: C";
+        } elseif($number >= 33 && $number <= 39) {
+            echo "Obtain Number:". (int)$number ." and Grade is: D";
+        } elseif($number >= 0 && $number <= 32) {
+            echo "Fail";
+        } else {
+            echo "Invalid Number";
+        }
+    }
 }
 
 ?>
