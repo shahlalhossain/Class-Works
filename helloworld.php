@@ -37,8 +37,6 @@ if($valueA > $valueB){
 
 
 
-
-
 //Example 3
 
 $a = 123456789;
@@ -91,12 +89,6 @@ for ($i=1; $i<=5; $i++)
 }
 
 
-
-
-
-
-
-
 //Example 5
 
 $name = 'Shahlal Hossain';
@@ -108,10 +100,6 @@ echo '<br>';
 echo "\"This is a message from $name\"";
 
 echo '<br>';
-
-
-
-
 
 
 
