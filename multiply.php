@@ -1,11 +1,17 @@
 
 <html>
+<head>
+    <title>Multiplication</title>
+</head>
 <body>
-<form action="<?php $_PHP_SELF ?>" method="POST">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 
-    Input First Number: <input type="text" name="number1" /> <br>
-    Input Second Number: <input type="text" name="number2" />
+    <label for="number1">Input First Number:</label>
+    <input type="text" id="number1" name="number1" /> <br>
+    <label for="number2">Input Second Number:</label>
+    <input type="text" id="number2" name="number2" />
     <input type="submit" value="Multiply" />
+
 </form>
 </body>
 </html>
@@ -13,12 +19,18 @@
 
 
 <?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-$number1 = $_POST['number1']. "<br />";
-$number2 = $_POST['number2']. "<br />";
+    $number1 = $_POST['number1'] . "<br />";
+    $number2 = $_POST['number2'] . "<br />";
 
-$multi = $number1 * $number2;
+    if ($number1 && $number2) {
+        echo("Number1: " . $number1);
+        echo("Number2: " . $number2);
 
-echo "Multiplication of the Two Given number is ="."$multi";
+        $multi = (int)$number1 * (int)$number2;
 
+        echo 'Multiplication of the Two Given Number ('.(int)$number1 .'÷'. (int)$number2.') is = '.$multi;
+    }
+}
 ?>
