@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $multi = (int)$number1 * (int)$number2;
 
-        echo 'Multiplication of the Two Given Number ('.(int)$number1 .'÷'. (int)$number2.') is = '.$multi;
+        echo 'Multiplication of the Two Given Number ('.(int)$number1 .'x'. (int)$number2.') is = '.$multi;
     }
 }
 ?>
